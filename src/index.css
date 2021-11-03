@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  text-align: center;
+}
+
+.card {
+  text-align: center;
+  border: rgb(115, 37, 164) solid 5px;
+  padding: 1rem;
+  width: 200px;
+  height: 350px;
+  display: inline-grid;
+  margin: 25px;
+  box-shadow: 3px 4px #e04b52;
+}
+
+.image {
+  justify-self: center;
+  height: 150px;
 }
