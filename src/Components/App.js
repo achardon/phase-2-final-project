@@ -1,6 +1,7 @@
 //import './App.css';
 import {useState, useEffect} from 'react';
 import PlayerContainer from './PlayerContainer';
+import NewPlayerForm from './NewPlayerForm';
 
 function App() {
 
@@ -14,7 +15,23 @@ function App() {
     })
   }, [])
 
-  console.log(players)
+  //console.log(players)
+
+  function addNewPlayer(newPlayer) {
+    console.log(newPlayer)
+    fetch(`http://localhost:3000/players`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: newPlayer})
+    })
+    .then(r => r.json())
+    .then(data => {
+      console.log(data)
+      setPlayers([...players, data])
+    })
+  }
 
   return (
     <div className="App">
@@ -22,8 +39,12 @@ function App() {
         <h1>My Team</h1>
         <br/>
         <br/>
-        <img src={'https://faberinfinite.com/wp-content/uploads/2018/11/team-3393037_1920.jpg'} alt="team" height='400'  />
+        <img src={'https://faberinfinite.com/wp-content/uploads/2018/11/team-3393037_1920.jpg'} alt="team" height='80'  />
+        <br/>
+        <br/>
+        <NewPlayerForm addNewPlayer={addNewPlayer}/>
       </header>
+      
       <PlayerContainer players={players} />
     </div>
   );
