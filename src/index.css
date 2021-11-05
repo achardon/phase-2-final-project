@@ -8,11 +8,15 @@ body {
   display: flex
 }
 
-.header {
-  text-align: center;
-}
 
-.card {
+
+/* moved to component with styled components */
+
+/* .header {
+  text-align: center;
+} */
+
+/* .card {
   text-align: center;
   border: rgb(115, 37, 164) solid 5px;
   padding: 1rem;
@@ -21,9 +25,9 @@ body {
   display: inline-grid;
   margin: 25px;
   box-shadow: 3px 4px #e04b52;
-}
+} */
 
-.image {
+/* .image {
   justify-self: center;
   height: 150px;
-}
+} */

@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import styled from 'styled-components';
 
 function PlayerCard( {player} ) {
 
@@ -47,7 +48,7 @@ function PlayerCard( {player} ) {
     //console.log(news)
 
     return(
-        <div className='card'>
+        <Card>
             <h2>{player.name}</h2>
             <img src={duck} alt={player.name} className='image' />
             <div>
@@ -60,8 +61,23 @@ function PlayerCard( {player} ) {
                 <p>{news.content}</p>
             </div>
            
-        </div>
+        </Card>
     )
 }
 
 export default PlayerCard;
+
+const Card = styled.div`
+    text-align: center;
+    border: rgb(115, 37, 164) solid 5px;
+    padding: 1rem;
+    width: 400px;
+    height: 600px;
+    display: inline-grid;
+    margin: 25px;
+    box-shadow: 3px 4px #e04b52;
+    img {
+        height: 150px;
+        justify-self: center;
+    }
+`
