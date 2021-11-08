@@ -8,7 +8,7 @@ function PlayerCard( {player, handleDelete} ) {
     const [news, setNews] = useState({title: '', content: ''})
 
     useEffect(() => {
-        //fetch(`https://random-d.uk/api/v1/random`)
+        // fetch(`https://random-d.uk/api/v1/random`)
         //fetch(`https://placebear.com/g/200/300`)
         //fetch(`https://api.github.com/users/octocat`)
         //fetch(`https://randomfox.ca/floof/`)
@@ -59,7 +59,7 @@ function PlayerCard( {player, handleDelete} ) {
                 <h3>Random News Article:</h3>
                 <h4>{news.title}</h4>
                 <p>{news.content}</p>
-                <button onClick={() => handleDelete(player.id)}>Delete</button>
+                <button onClick={() => handleDelete(player.id)}>Delete Player</button>
             </div>
            
         </Card>
