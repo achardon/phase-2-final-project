@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-function PlayerCard( {player} ) {
+function PlayerCard( {player, handleDelete} ) {
 
     const [duck, setDuck] = useState('')
     const [fact, setFact] = useState('')
@@ -59,6 +59,7 @@ function PlayerCard( {player} ) {
                 <h3>Random News Article:</h3>
                 <h4>{news.title}</h4>
                 <p>{news.content}</p>
+                <button onClick={() => handleDelete(player.id)}>Delete</button>
             </div>
            
         </Card>
@@ -72,7 +73,7 @@ const Card = styled.div`
     border: rgb(115, 37, 164) solid 5px;
     padding: 1rem;
     width: 400px;
-    height: 600px;
+    height: 800px;
     display: inline-grid;
     margin: 25px;
     box-shadow: 3px 4px #e04b52;
