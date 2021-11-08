@@ -5,6 +5,7 @@ function PlayerCard({ player, handleDelete }) {
   const [duck, setDuck] = useState("");
   const [fact, setFact] = useState("");
   const [news, setNews] = useState({ title: "", content: "" });
+  const [details, setDetails] = useState(false)
 
   useEffect(() => {
     // fetch(`https://random-d.uk/api/v1/random`)
@@ -57,8 +58,10 @@ function PlayerCard({ player, handleDelete }) {
       };
   }, []);
 
-  //console.log(duck)
-  //console.log(news)
+  function handleDetails() {
+      console.log('details')
+      setDetails(!details)
+  }
 
   return (
     <Card>
@@ -72,7 +75,11 @@ function PlayerCard({ player, handleDelete }) {
         <h3>{player.name}'s News Article:</h3>
         <h4>{news.title}</h4>
         <p>{news.content}</p>
-        <button onClick={() => handleDelete(player.id)}>Delete Player</button>
+        <button onClick={handleDetails}>{details?'Hide Details':'Show details about this player'}</button>
+        {details?<p>Hobbies: {player.hobbies}</p>:null}
+        <br/>
+        <br/>
+        <button onClick={() => handleDelete(player.id)} >Delete Player</button>
       </div>
     </Card>
   );
