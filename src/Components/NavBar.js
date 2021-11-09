@@ -24,6 +24,9 @@ function NavBar() {
       <NavLink to="/players/new" style={linkStyles}>
         Add Player
       </NavLink>
+      <NavLink to="/goals" style={linkStyles}>
+        Team Goals
+      </NavLink>
     </Bar>
   );
 }

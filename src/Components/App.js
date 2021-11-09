@@ -4,10 +4,12 @@ import PlayerContainer from "./PlayerContainer";
 import NewPlayerForm from "./NewPlayerForm";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import TeamGoals from "./TeamGoals";
 
 function App() {
   const [players, setPlayers] = useState([]);
   const history = useHistory();
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/players")
@@ -60,6 +62,9 @@ function App() {
         </Route>
         <Route exact path="/players">
           <PlayerContainer players={players} handleDelete={handleDelete} />
+        </Route>
+        <Route exact path="/goals">
+          <TeamGoals />
         </Route>
       </Switch>
     </div>

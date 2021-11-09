@@ -53,4 +53,5 @@ const Form = styled.div`
         margin-left: 10px;
     }
     margin-top: 50px;
+    display: flex;
 `
