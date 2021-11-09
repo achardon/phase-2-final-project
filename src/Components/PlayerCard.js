@@ -8,13 +8,10 @@ function PlayerCard({ player, handleDelete }) {
   const [details, setDetails] = useState(false)
 
   useEffect(() => {
-    // fetch(`https://random-d.uk/api/v1/random`)
-    //fetch(`https://placebear.com/g/200/300`)
-    //fetch(`https://api.github.com/users/octocat`)
-    //fetch(`https://randomfox.ca/floof/`)
-    fetch(
-      "https://agile-beyond-71249.herokuapp.com/https://random-d.uk/api/v1/random"
-    )
+    //Michael's proxy server below
+    // fetch("https://agile-beyond-71249.herokuapp.com/https://random-d.uk/api/v1/random")
+    //created my own proxy server using this blog: https://dev.to/imiebogodson/fixing-the-cors-error-by-hosting-your-own-proxy-on-heroku-3lcb
+    fetch("https://hidden-eyrie-69734.herokuapp.com/https://random-d.uk/api/v1/random")
       .then((r) => r.json())
       .then((data) => {
         //console.log(data)
@@ -42,7 +39,11 @@ function PlayerCard({ player, handleDelete }) {
   }, []);
 
   useEffect(() => {
+    //API: https://github.com/cyberboysumanjay/Inshorts-News-API  
+    //for only science articles:
     fetch(`https://inshortsapi.vercel.app/news?category=science`)
+    //for article of any genre:
+    // fetch(`https://inshortsapi.vercel.app/news?category=all`)
       .then((r) => r.json())
       .then((data) => {
         //console.log(data)
@@ -59,7 +60,6 @@ function PlayerCard({ player, handleDelete }) {
   }, []);
 
   function handleDetails() {
-      console.log('details')
       setDetails(!details)
   }
 

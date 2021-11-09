@@ -81,6 +81,8 @@ export default App;
 
 //how do you run a clean up code for a fetch call in a useEffect?
 
+//Why is it that when I first start the app with npm start that it goes to the /players page instead of the home page?
+
 
 
 
