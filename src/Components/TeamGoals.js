@@ -52,6 +52,7 @@ function TeamGoals() {
     return (
         <Goals>
             <h1>Team Goals</h1>
+            
             {goals.map(goal => {
                 return <Goal key={goal.id} goal={goal} handleDelete={handleDelete}/>
             })}
@@ -61,6 +62,11 @@ function TeamGoals() {
                 <input type="text" id="goal" name="goal" value={newGoal.name} onChange={handleChange} />
                 <input type="submit" value="Add Goal"></input>
             </form>
+            <br/>
+            <br/>
+            <img src='https://dq5pwpg1q8ru0.cloudfront.net/2020/10/30/09/11/52/a3aff958-3697-47cf-8aec-9c7227a6e3ed/duck-flying-wallpaper-background-17254-17792-hd-wallpapers.jpg' alt='duck quote' height='400'></img>
+            <br/>
+            <br/>
         </Goals>
         
     )
