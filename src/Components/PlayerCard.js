@@ -26,6 +26,8 @@ function PlayerCard({ player, handleDelete }) {
 
   useEffect(() => {
     fetch("https://uselessfacts.jsph.pl/random.json")
+    //if you only want facts in English
+    // fetch("https://uselessfacts.jsph.pl/random.json?language=en")
       .then((r) => r.json())
       .then((data) => {
         //console.log(data)

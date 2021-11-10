@@ -90,6 +90,8 @@ export default App;
 
 //protocol behind using images on app?
 
+//Any suggestions/tips for deploying the app? Blog?
+
 
 
 

@@ -5,9 +5,7 @@ import Goal from "./Goal";
 function TeamGoals() {
     
     const [goals, setGoals] = useState([])
-    const [newGoal, setNewGoal] = useState({
-        name: ''
-    })
+    const [newGoal, setNewGoal] = useState('')
 
     useEffect(() => {
         fetch(`http://localhost:3000/goals`)
@@ -18,7 +16,7 @@ function TeamGoals() {
     }, [])
 
     function handleChange(e) {
-        setNewGoal({name: e.target.value})
+        setNewGoal(e.target.value)
     }
 
     //How do you clear form after submitting?
@@ -29,11 +27,12 @@ function TeamGoals() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newGoal)
+            body: JSON.stringify({name: newGoal})
         })
         .then(r => r.json())
         .then(data => {
             setGoals([...goals, data])
+            setNewGoal('')
         })
     }
 
@@ -57,16 +56,14 @@ function TeamGoals() {
                 return <Goal key={goal.id} goal={goal} handleDelete={handleDelete}/>
             })}
             
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{padding: '30px'}}>
                 <label htmlFor="goal"> New Goal: </label>
-                <input type="text" id="goal" name="goal" value={newGoal.name} onChange={handleChange} />
+                <input type="text" id="goal" name="goal" value={newGoal} onChange={handleChange} style={{marginRight: '10px'}} />
                 <input type="submit" value="Add Goal"></input>
             </form>
             <br/>
-            <br/>
-            <img src='https://dq5pwpg1q8ru0.cloudfront.net/2020/10/30/09/11/52/a3aff958-3697-47cf-8aec-9c7227a6e3ed/duck-flying-wallpaper-background-17254-17792-hd-wallpapers.jpg' alt='duck quote' height='400'></img>
-            <br/>
-            <br/>
+            {/* <img src='https://dq5pwpg1q8ru0.cloudfront.net/2020/10/30/09/11/52/a3aff958-3697-47cf-8aec-9c7227a6e3ed/duck-flying-wallpaper-background-17254-17792-hd-wallpapers.jpg' alt='duck quote' height='400'></img> */}
+            <img src='https://random-d.uk/api/126.jpg' alt='duck quote' height='400' style={{marginBottom: '20px'}}></img>
         </Goals>
         
     )
