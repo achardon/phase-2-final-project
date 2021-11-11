@@ -8,20 +8,13 @@ function PlayerCard({ player, handleDelete }) {
   const [details, setDetails] = useState(false)
 
   useEffect(() => {
-    //Michael's proxy server below
-    // fetch("https://agile-beyond-71249.herokuapp.com/https://random-d.uk/api/v1/random")
-    //created my own proxy server using this blog: https://dev.to/imiebogodson/fixing-the-cors-error-by-hosting-your-own-proxy-on-heroku-3lcb
+    //created proxy server using this blog: https://dev.to/imiebogodson/fixing-the-cors-error-by-hosting-your-own-proxy-on-heroku-3lcb
     fetch("https://hidden-eyrie-69734.herokuapp.com/https://random-d.uk/api/v1/random")
       .then((r) => r.json())
       .then((data) => {
-        //console.log(data)
         const image = data.url;
         setDuck(image);
       });
-    //clean up function
-    return function cleanup() {
-      clearInterval(fetch);
-    };
   }, []);
 
   useEffect(() => {
@@ -34,10 +27,6 @@ function PlayerCard({ player, handleDelete }) {
         const fact = data.text;
         setFact(fact);
       });
-    //clean up function
-    return function cleanup() {
-        clearInterval(fetch);
-      };
   }, []);
 
   useEffect(() => {
@@ -55,10 +44,6 @@ function PlayerCard({ player, handleDelete }) {
         const content = data.data[number].content;
         setNews({ title: title, content: content });
       });
-    //clean up function
-    return function cleanup() {
-        clearInterval(fetch);
-      };
   }, []);
 
   function handleDetails() {

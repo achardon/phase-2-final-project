@@ -21,13 +21,12 @@ function NewPlayerForm( {addNewPlayer} ) {
 
     return(
         <Div>
-            <br/>
             <h2 style={{textAlign: 'center'}}>Add New Player</h2>
             <Form>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="name">  Name:    </label>
+                    <label htmlFor="name">  Name:</label>
                     <input type="text" id="name" name="name" value={newPlayer.name} onChange={handleChange}/>
-                    <label htmlFor="hobbies">  Favorite Hobbies:    </label>
+                    <label htmlFor="hobbies">  Favorite Hobbies: </label>
                     <input type="text" id="hobbies" name="hobbies" value={newPlayer.hobbies} onChange={handleChange}/>
                     <input type="submit" value="Add Player"></input>
                 </form>    
@@ -35,7 +34,7 @@ function NewPlayerForm( {addNewPlayer} ) {
             <br/>
             <br/>
             <br/>
-            <img src='https://random-d.uk/api/107.jpg'         alt='duck' height='400'></img>
+            <img src='https://random-d.uk/api/107.jpg' alt='duck' height='400'></img>
         </Div>
         
     )
@@ -61,4 +60,5 @@ const Form = styled.div`
 const Div = styled.div`
     margin: auto;
     text-align: center;
+    padding: 20px;
 `
