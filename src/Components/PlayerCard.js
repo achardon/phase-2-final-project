@@ -18,9 +18,9 @@ function PlayerCard({ player, handleDelete }) {
   }, []);
 
   useEffect(() => {
-    fetch("https://uselessfacts.jsph.pl/random.json")
+    // fetch("https://uselessfacts.jsph.pl/random.json")
     //if you only want facts in English
-    // fetch("https://uselessfacts.jsph.pl/random.json?language=en")
+    fetch("https://uselessfacts.jsph.pl/random.json?language=en")
       .then((r) => r.json())
       .then((data) => {
         //console.log(data)
@@ -50,6 +50,25 @@ function PlayerCard({ player, handleDelete }) {
       setDetails(!details)
   }
 
+  // use below for if/else statements instead of AND && operator
+  // function buttonText () {
+  //   if (details) {
+  //     return 'Hide Details';
+  //   }
+  //   else {
+  //     return 'Show details about this player';
+  //   }
+  // }
+
+  // function hobbies () {
+  //   if (details) {
+  //     return <p>Hobbies: {player.hobbies}</p>;
+  //   }
+  //   else {
+  //     return null;
+  //   }
+  // }
+
   return (
     <Card>
       <h2>{player.name}</h2>
@@ -62,11 +81,13 @@ function PlayerCard({ player, handleDelete }) {
         <h3>{player.name}'s News Article:</h3>
         <h4>{news.title}</h4>
         <p>{news.content}</p>
-        <button onClick={handleDetails}>{details?'Hide Details':'Show details about this player'}</button>
-        {details?<p>Hobbies: {player.hobbies}</p>:null}
-        <br/>
-        <br/>
-        <button onClick={() => handleDelete(player.id)} >Delete Player</button>
+        <Container>
+          <button onClick={handleDetails}>{details? 'Hide Details':'Show details about this player'}</button>
+        </Container>
+          {details && <p>Hobbies: {player.hobbies}</p>}
+        <Container>
+          <button onClick={() => handleDelete(player.id)} >Delete Player</button>
+        </Container>
       </div>
     </Card>
   );
@@ -87,4 +108,8 @@ const Card = styled.div`
     height: 150px;
     justify-self: center;
   }
+`;
+
+const Container = styled.div`
+  padding: 10px;
 `;
