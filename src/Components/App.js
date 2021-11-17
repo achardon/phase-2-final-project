@@ -76,3 +76,9 @@ export default App;
 //Notes: to get the version you want for something (after downloading the wrong version accidentally, such as react-router-dom v6.0.0), you have to delete the 'package-lock.json' and the 'node_modules'. In 'package.json', find what you want a different version of, and type in the specific version you want(without the carrot in front of the version, because that would mean that version or higher). Then run 'npm install' and it should download the version you specified and restore 'package-lock.json' and 'node_modules'.
 
 //when creating react-app, some sources said to use 'npx' instead of 'npm'. What's the difference? 'npx' is now preferred, but either works.
+
+//deploying:
+//https://dev.to/caicindy87/deploying-rails-api-backend-react-frontend-app-to-heroku-5a25#deploy-react
+//skip steps 4-6
+//go to heroku, tab that says 'deploy'
+//change 'heroku git' to 'github' for Deployment method
