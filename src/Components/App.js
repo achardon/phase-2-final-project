@@ -11,7 +11,7 @@ function App() {
   const history = useHistory();
   
   useEffect(() => {
-    fetch("https://tranquil-cliffs-49188.herokuapp.com/players")
+    fetch("http://localhost:3000/players")
       .then((r) => r.json())
       .then((data) => {
         setPlayers(data);
