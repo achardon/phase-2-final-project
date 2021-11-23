@@ -11,7 +11,7 @@ function App() {
   const history = useHistory();
   
   useEffect(() => {
-    fetch("http://localhost:3000/players")
+    fetch("https://tranquil-cliffs-49188.herokuapp.com/players")
       .then((r) => r.json())
       .then((data) => {
         setPlayers(data);
@@ -34,7 +34,7 @@ function App() {
   }
 
   function handleDelete(playerID) {
-    fetch(`http://localhost:3000/players/${playerID}`, {
+    fetch(`https://tranquil-cliffs-49188.herokuapp.com/players/${playerID}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
