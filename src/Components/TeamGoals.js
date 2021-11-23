@@ -8,7 +8,7 @@ function TeamGoals() {
     const [newGoal, setNewGoal] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:3000/goals`)
+        fetch(`https://tranquil-cliffs-49188.herokuapp.com/goals`)
         .then(r => r.json())
         .then(data => {
             setGoals(data)
@@ -21,7 +21,7 @@ function TeamGoals() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch(`http://localhost:3000/goals`, {
+        fetch(`https://tranquil-cliffs-49188.herokuapp.com/goals`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ function TeamGoals() {
 
     function handleDelete(goalID) {
         const updatedGoals = goals.filter(goal => goal.id !== goalID)
-        fetch(`http://localhost:3000/goals/${goalID}`, {
+        fetch(`https://tranquil-cliffs-49188.herokuapp.com/goals/${goalID}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
