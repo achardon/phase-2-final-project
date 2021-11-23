@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   function addNewPlayer(newPlayer) {
-    fetch(`http://localhost:3000/players`, {
+    fetch(`https://tranquil-cliffs-49188.herokuapp.com/players`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
