@@ -9,7 +9,7 @@ function PlayerCard({ player, handleDelete }) {
 
   useEffect(() => {
     //created proxy server using this blog: https://dev.to/imiebogodson/fixing-the-cors-error-by-hosting-your-own-proxy-on-heroku-3lcb
-    fetch("https://hidden-eyrie-69734.herokuapp.com/https://random-d.uk/api/v1/random")
+    fetch("https://agile-beyond-71249.herokuapp.com/https://random-d.uk/api/v1/random")
       .then((r) => r.json())
       .then((data) => {
         const image = data.url;
